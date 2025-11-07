@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piattaforma ESG per PMI - Impostazioni</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .toggle-checkbox:checked {
+            right: 0;
+            border-color: #2563eb;
+        }
+        .toggle-checkbox:checked + .toggle-label {
+            background-color: #2563eb;
+        }
+        .toggle-checkbox:checked + .toggle-label::after {
+            transform: translateX(100%);
+            border-color: white;
+        }
+        .toggle-label {
+            display: block;
+            width: 2.5rem;
+            height: 1.5rem;
+            background-color: #d1d5db;
+            border-radius: 9999px;
+            position: relative;
+            transition: background-color 0.2s ease-in-out;
+        }
+        .toggle-label::after {
+            content: '';
+            position: absolute;
+            width: 1rem;
+            height: 1rem;
+            background-color: white;
+            border-radius: 9999px;
+            top: 2px;
+            left: 2px;
+            transition: transform 0.2s ease-in-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+<div class="flex flex-col min-h-screen">
+
+    <!-- ===== Header (Global) ===== -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex-shrink-0 flex items-center space-x-2">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">A</span>
+                        <span class="font-bold text-lg hidden sm:block">[Nome Azienda]</span>
+                    </div>
+<div class="flex-shrink-0 text-gray-700 font-semibold text-lg">
+    🌍 
+    <a href="file:///C:/Users/Monet/Desktop/ESG_Platform/Welcome_Index.html" 
+       class="hidden md:inline hover:underline hover:text-blue-600">
+        Piattaforma ESG
+    </a>
+</div>
+
+                    <nav class="hidden md:flex space-x-4">
+                        <a href="Dashboard.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="Analisi.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Analisi</a>
+                        <a href="Report.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Report</a>
+                        <a href="Benchmark.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Benchmark</a>
+                        <a href="Formazione_Risorse.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Formazione</a>
+                        <a href="Partner_Hub.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Partner Hub</a>
+                        <a href="Impostazioni.html" class="bg-gray-200 text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Impostazioni</a>           
+                    </nav>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100" title="Impostazioni">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021M12 9h.01M15 12h.01M12 15h.01M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021m5.421 2.373c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m11.455 0l.04-.004c.437-.057.852-.189 1.217-.387m0 0l.04-.004c.437-.057.852-.189 1.217-.387M4.419 6.17c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004M12 3.82c.09-.542.56-1.007 1.11-1.226l.041-.021m-1.11 1.226l-.041.021a11.955 11.955 0 00-1.11 1.226M12 3.82l.041-.021a11.955 11.955 0 011.11 1.226M18.364 5.636l.01.004c.437.057.852.189 1.217.387l.04-.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M12 18.18c.09.542.56 1.007 1.11 1.226l.041.021m-1.11-1.226l-.041-.021a11.955 11.955 0 01-1.11-1.226M12 18.18l.041.021a11.955 11.955 0 001.11-1.226m5.421-2.373c.365-.198.78.33 1.217.387l.04-.004m-11.455 0c.437.057.852-.189 1.217-.387l.04.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m-1.217-.387l-.04.004a11.955 11.955 0 01-1.217.387M12 21a9 9 0 100-18 9 9 0 000 18zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+                        </svg>
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium text-gray-700">UA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Main Content ===== -->
+    <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <header class="mb-8">
+            <h1 class="text-3xl font-bold text-gray-900">Impostazioni e Profilo Azienda</h1>
+            <p class="mt-2 text-lg text-gray-600">Gestisci i dati aziendali, gli utenti e le preferenze della piattaforma.</p>
+        </header>
+
+        <!-- Content Grid -->
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+
+            <!-- Left Column -->
+            <div class="lg:col-span-2 space-y-8">
+                <!-- Dati Base -->
+                <section class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-5">Dati Base</h2>
+                    <form class="space-y-4">
+                        <div>
+                            <label for="ragione_sociale" class="block text-sm font-medium text-gray-700">Ragione Sociale</label>
+                            <input type="text" id="ragione_sociale" value="[Nome Azienda S.r.l.]" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                        </div>
+                        <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                            <div>
+                                <label for="settore" class="block text-sm font-medium text-gray-700">Settore</label>
+                                <select id="settore" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option>Manifatturiero</option>
+                                    <option>Servizi</option>
+                                    <option>Commercio</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="dipendenti" class="block text-sm font-medium text-gray-700">Numero Dipendenti</label>
+                                <select id="dipendenti" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                    <option>1-9</option>
+                                    <option>10-49</option>
+                                    <option selected>50-249</option>
+                                    <option>250+</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="text-right pt-2">
+                            <button type="submit" class="py-2 px-4 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700">Salva Modifiche</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Preferenze -->
+                <section class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-5">Preferenze</h2>
+                    <form class="grid grid-cols-1 sm:grid-cols-3 gap-6">
+                        <div>
+                            <label for="lingua" class="block text-sm font-medium text-gray-700">Lingua</label>
+                            <select id="lingua" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option selected>Italiano</option>
+                                <option>English</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label for="valuta" class="block text-sm font-medium text-gray-700">Valuta</label>
+                            <select id="valuta" class="mt-1 block w-full border-gray-300 rounded-md shadow-sm focus:ring-blue-500 focus:border-blue-500 sm:text-sm">
+                                <option selected>EUR (€)</option>
+                                <option>USD ($)</option>
+                            </select>
+                        </div>
+                        <div class="text-right self-end">
+                            <button type="submit" class="py-2 px-4 bg-blue-600 text-white rounded-md shadow-sm hover:bg-blue-700">Salva Preferenze</button>
+                        </div>
+                    </form>
+                </section>
+
+                <!-- Integrazioni -->
+                <section class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Integrazioni</h2>
+                    <div class="flex justify-between items-center">
+                        <div>
+                            <h3 class="text-base font-medium text-gray-900">Database ESG Nazionale</h3>
+                            <p class="text-sm text-gray-500">Sincronizza automaticamente i dati (opzionale).</p>
+                        </div>
+                        <div class="relative flex items-center">
+                            <span class="mr-3 text-sm text-gray-900">Off</span>
+                            <input type="checkbox" id="toggle_db" class="toggle-checkbox absolute block w-6 h-6 rounded-full bg-white border-4 appearance-none cursor-pointer invisible" />
+                            <label for="toggle_db" class="toggle-label cursor-pointer"></label>
+                            <span class="ml-3 text-sm text-gray-900">On</span>
+                        </div>
+                    </div>
+                </section>
+            </div>
+
+            <!-- Right Column -->
+            <div class="lg:col-span-1">
+                <section class="bg-white p-6 rounded-lg shadow-sm border border-gray-200">
+                    <div class="flex justify-between items-center mb-5">
+                        <h2 class="text-xl font-semibold text-gray-800">Utenti e Permessi</h2>
+                        <button class="text-sm font-medium text-blue-600 hover:text-blue-800">+ Aggiungi</button>
+                    </div>
+                    <ul class="space-y-4">
+                        <li class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <span class="w-10 h-10 rounded-full bg-blue-100 text-blue-700 flex items-center justify-center font-medium">UA</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Utente Admin</p>
+                                    <p class="text-sm text-gray-500">admin@azienda.it</p>
+                                </div>
+                            </div>
+                            <span class="text-sm font-medium text-gray-600">Admin</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <span class="w-10 h-10 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center font-medium">MR</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Mario Rossi</p>
+                                    <p class="text-sm text-gray-500">m.rossi@azienda.it</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">Editor</span>
+                        </li>
+                        <li class="flex items-center justify-between">
+                            <div class="flex items-center space-x-3">
+                                <span class="w-10 h-10 rounded-full bg-gray-200 text-gray-700 flex items-center justify-center font-medium">GV</span>
+                                <div>
+                                    <p class="text-sm font-medium text-gray-900">Giulia Verdi</p>
+                                    <p class="text-sm text-gray-500">g.verdi@azienda.it</p>
+                                </div>
+                            </div>
+                            <span class="text-sm text-gray-500">Viewer</span>
+                        </li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+</body>
+</html>

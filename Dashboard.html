@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piattaforma ESG per PMI - Dashboard</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        #chat-window {
+            transition: opacity 0.3s ease-out, transform 0.3s ease-out;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<div class="flex flex-col min-h-screen">
+
+    <!-- ===== Header ===== -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex-shrink-0 flex items-center space-x-2">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">A</span>
+                        <span class="font-bold text-lg hidden sm:block">[Nome Azienda]</span>
+                    </div>
+<div class="flex-shrink-0 text-gray-700 font-semibold text-lg">
+    🌍 
+    <a href="file:///C:/Users/Monet/Desktop/ESG_Platform/Welcome_Index.html" 
+       class="hidden md:inline hover:underline hover:text-blue-600">
+        Piattaforma ESG
+    </a>
+</div>
+
+                    <nav class="hidden md:flex space-x-4">
+                        <a href="Dashboard.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="Analisi.html" class="bg-gray-200 text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Analisi</a>
+                        <a href="Report.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Report</a>
+                        <a href="Benchmark.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Benchmark</a>
+                        <a href="Formazione_Risorse.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Formazione</a>
+                        <a href="Impostazioni.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Impostazioni</a>
+                        <a href="Partner_Hub.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Partner Hub</a>
+                    </nav>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100" title="Impostazioni">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021M12 9h.01M15 12h.01M12 15h.01M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021m5.421 2.373c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m11.455 0l.04-.004c.437-.057.852-.189 1.217-.387m0 0l.04-.004c.437-.057.852-.189 1.217-.387M4.419 6.17c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004M12 3.82c.09-.542.56-1.007 1.11-1.226l.041-.021m-1.11 1.226l-.041.021a11.955 11.955 0 00-1.11 1.226M12 3.82l.041-.021a11.955 11.955 0 011.11 1.226M18.364 5.636l.01.004c.437.057.852.189 1.217.387l.04-.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M12 18.18c.09.542.56 1.007 1.11 1.226l.041.021m-1.11-1.226l-.041-.021a11.955 11.955 0 01-1.11-1.226M12 18.18l.041.021a11.955 11.955 0 001.11-1.226m5.421-2.373c.365-.198.78-.33 1.217-.387l.04-.004m-11.455 0c.437.057.852.189 1.217.387l.04.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m-1.217-.387l-.04.004a11.955 11.955 0 01-1.217.387M12 21a9 9 0 100-18 9 9 0 000 18zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+                        </svg>
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium text-gray-700">UA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- ===== Contenuto Principale ===== -->
+    <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 space-y-6">
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Pannello KPI Sintetici</h2>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 text-center">
+                        <div class="bg-blue-50 border border-blue-200 p-4 rounded-lg">
+                            <div class="text-4xl font-bold text-blue-700">68<span class="text-2xl">/100</span></div>
+                            <div class="text-sm font-medium text-blue-800 mt-1">Punteggio ESG Complessivo</div>
+                        </div>
+                        <div class="bg-green-50 border border-green-200 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-green-700">75<span class="text-xl">/100</span></div>
+                            <div class="text-sm font-medium text-green-800 mt-1">Ambiente ♻️</div>
+                        </div>
+                        <div class="bg-yellow-50 border border-yellow-200 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-yellow-700">62<span class="text-xl">/100</span></div>
+                            <div class="text-sm font-medium text-yellow-800 mt-1">Sociale 👥</div>
+                        </div>
+                        <div class="bg-indigo-50 border border-indigo-200 p-4 rounded-lg">
+                            <div class="text-3xl font-bold text-indigo-700">65<span class="text-xl">/100</span></div>
+                            <div class="text-sm font-medium text-indigo-800 mt-1">Governance 🏛️</div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h3 class="text-lg font-semibold text-gray-800 mb-4">Breakdown Pilastri ESG</h3>
+                    <div class="bg-gray-200 h-64 rounded-lg flex items-center justify-center text-gray-500">
+                        <img src="https://placehold.co/600x250/e2e8f0/64748b?text=Grafico+Radar+o+Barre" 
+                             alt="Placeholder per grafico ESG" 
+                             class="w-full h-full object-cover rounded-lg"
+                             onerror="this.src='https://placehold.co/600x250/e2e8f0/64748b?text=Grafico+ESG'; this.onerror=null;">
+                    </div>
+                </section>
+
+                <section>
+                    <button class="w-full sm:w-auto bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-md transition duration-300 ease-in-out transform hover:-translate-y-1">
+                        Migliora il tuo rating ESG
+                    </button>
+                </section>
+            </div>
+
+            <div class="lg:col-span-1 space-y-6">
+                <section class="bg-white p-6 rounded-lg shadow">
+                    <h2 class="text-xl font-semibold text-gray-800 mb-4">Notifiche & Alert</h2>
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3 p-4 bg-yellow-50 border border-yellow-200 rounded-lg">
+                            <svg class="h-5 w-5 text-yellow-600 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M8.485 2.495c.646-1.136 2.374-1.136 3.02 0l6.255 11.009c.646 1.136-.204 2.59-1.51 2.59H3.74c-1.306 0-2.156-1.454-1.51-2.59l6.255-11.009zM10 6a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 0110 6zM10 14a1 1 0 100-2 1 1 0 000 2z" clip-rule="evenodd" />
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Azione richiesta</h4>
+                                <p class="text-sm text-gray-600 mt-1">Aggiorna il questionario ambientale per il Q4.</p>
+                                <a href="#" class="text-sm font-medium text-yellow-700 hover:text-yellow-800 mt-2 inline-block">Completa ora &rarr;</a>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3 p-4 bg-blue-50 border border-blue-200 rounded-lg">
+                            <svg class="h-5 w-5 text-blue-600 mt-1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" />
+                            </svg>
+                            <div>
+                                <h4 class="font-medium text-gray-800">Aggiornamento</h4>
+                                <p class="text-sm text-gray-600 mt-1">Nuovo benchmark disponibile per il tuo settore.</p>
+                                <a href="#" class="text-sm font-medium text-blue-700 hover:text-blue-800 mt-2 inline-block">Vedi dettagli &rarr;</a>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+</div>
+
+</body>
+</html>

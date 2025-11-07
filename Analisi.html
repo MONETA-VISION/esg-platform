@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piattaforma ESG per PMI - Analisi</title>
+    <!-- Caricamento Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Caricamento font Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        .tooltip-trigger { position: relative; cursor: help; }
+        .tooltip-content {
+            display: none; position: absolute; z-index: 10;
+            bottom: 125%; left: 50%; transform: translateX(-50%);
+            background-color: #1f2937; color: white;
+            padding: 8px 12px; border-radius: 6px;
+            font-size: 0.875rem; font-weight: 500;
+            width: 220px;
+            box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1),
+                        0 2px 4px -1px rgba(0,0,0,0.06);
+        }
+        .tooltip-trigger:hover .tooltip-content { display: block; }
+        input[type="range"]::-webkit-slider-thumb {
+            -webkit-appearance: none; appearance: none;
+            width: 20px; height: 20px; background: #2563eb;
+            border-radius: 50%; cursor: pointer; margin-top: -6px;
+        }
+        input[type="range"]::-moz-range-thumb {
+            width: 20px; height: 20px; background: #2563eb;
+            border-radius: 50%; cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+<div class="flex flex-col min-h-screen">
+
+    <!-- ===== Header aggiornato ===== -->
+    <header class="bg-white shadow-sm border-b border-gray-200">
+        <div class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <div class="flex items-center space-x-8">
+                    <div class="flex-shrink-0 flex items-center space-x-2">
+                        <span class="bg-blue-600 text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">A</span>
+                        <span class="font-bold text-lg hidden sm:block">[Nome Azienda]</span>
+                    </div>
+<div class="flex-shrink-0 text-gray-700 font-semibold text-lg">
+    🌍 
+    <a href="file:///C:/Users/Monet/Desktop/ESG_Platform/Welcome_Index.html" 
+       class="hidden md:inline hover:underline hover:text-blue-600">
+        Piattaforma ESG
+    </a>
+</div>
+
+                    <nav class="hidden md:flex space-x-4">
+                        <a href="Dashboard.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Dashboard</a>
+                        <a href="Analisi.html" class="bg-gray-200 text-gray-900 px-3 py-2 rounded-md text-sm font-medium" aria-current="page">Analisi</a>
+                        <a href="Report.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Report</a>
+                        <a href="Benchmark.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Benchmark</a>
+                        <a href="Formazione_Risorse.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Formazione</a>
+                        <a href="Partner_Hub.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Partner Hub</a>
+                        <a href="Impostazioni.html" class="text-gray-500 hover:bg-gray-100 hover:text-gray-900 px-3 py-2 rounded-md text-sm font-medium">Impostazioni</a>                    </nav>
+                </div>
+                <div class="flex items-center space-x-4">
+                    <a href="#" class="text-gray-500 hover:text-gray-700 p-2 rounded-full hover:bg-gray-100" title="Impostazioni">
+                        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none"
+                             viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round"
+                                  d="M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021M12 9h.01M15 12h.01M12 15h.01M10.343 3.94c.09-.542.56-1.007 1.11-1.226l.041-.021m5.421 2.373c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m11.455 0l.04-.004c.437-.057.852-.189 1.217-.387m0 0l.04-.004c.437-.057.852-.189 1.217-.387M4.419 6.17c.365.198.78.33 1.217.387l.04.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004M12 3.82c.09-.542.56-1.007 1.11-1.226l.041-.021m-1.11 1.226l-.041.021a11.955 11.955 0 00-1.11 1.226M12 3.82l.041-.021a11.955 11.955 0 011.11 1.226M18.364 5.636l.01.004c.437.057.852.189 1.217.387l.04-.004m-11.455 0c.437-.057.852-.189 1.217-.387l.04-.004m11.455 0l.04.004c.437.057.852.189 1.217.387M12 18.18c.09.542.56 1.007 1.11 1.226l.041.021m-1.11-1.226l-.041-.021a11.955 11.955 0 01-1.11-1.226M12 18.18l.041.021a11.955 11.955 0 001.11-1.226m5.421-2.373c.365-.198.78-.33 1.217-.387l.04-.004m-11.455 0c.437.057.852.189 1.217.387l.04.004m11.455 0l.04.004c.437.057.852.189 1.217.387M5.636 18.364l.01.004c.437.057.852.189 1.217.387l.04-.004m-1.217-.387l-.04.004a11.955 11.955 0 01-1.217.387M12 21a9 9 0 100-18 9 9 0 000 18zM12 9a3 3 0 100 6 3 3 0 000-6z" />
+                        </svg>
+                    </a>
+                    <div class="flex items-center space-x-2">
+                        <span class="bg-gray-300 w-8 h-8 rounded-full flex items-center justify-center text-sm font-medium text-gray-700">UA</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+        <!-- ===== Contenuto Principale: Analisi ESG ===== -->
+        <main class="flex-1 container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+            
+            <header class="mb-6">
+                <h1 class="text-3xl font-bold text-gray-900">Analisi ESG</h1>
+                <p class="mt-2 text-lg text-gray-600">Valuta e aggiorna i tuoi indicatori per i tre pilastri: Ambiente, Sociale e Governance.</p>
+            </header>
+
+            <!-- Sistema di Tab -->
+            <div>
+                <!-- Navigazione Tab -->
+                <div class="border-b border-gray-300">
+                    <nav class="-mb-px flex space-x-6" aria-label="Tabs">
+                        <button class="tab-button" data-tab="ambiente" role="tab">
+                            Ambiente (E)
+                        </button>
+                        <button class="tab-button" data-tab="sociale" role="tab">
+                            Sociale (S)
+                        </button>
+                        <button class="tab-button" data-tab="governance" role="tab">
+                            Governance (G)
+                        </button>
+                    </nav>
+                </div>
+
+                <!-- Contenuto Tab -->
+                <div class="mt-6">
+
+                    <!-- Pannello Ambiente (E) -->
+                    <div id="tab-ambiente" class="tab-pane" role="tabpanel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                            
+                            <!-- Indicatore: Emissioni COâ‚‚ -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Emissioni CO</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Totale emissioni di gas serra (Scope 1 e 2) in tonnellate di CO2 equivalente (tCO2e) all'anno.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Buono</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>Valore (tCO2e)</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">75</span>
+                                    </div>
+                                    <input type="range" min="0" max="500" value="75" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Consumi Energetici -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Consumi Energetici</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Consumo totale di energia da fonti non rinnovabili e rinnovabili, misurato in megawattora (MWh).</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full text-sm font-medium">🟡 Da Migliorare</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>Valore (MWh)</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">210</span>
+                                    </div>
+                                    <input type="range" min="0" max="500" value="210" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Gestione Rifiuti -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Gestione Rifiuti</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Percentuale di rifiuti totali riciclati o recuperati rispetto a quelli inviati in discarica. Obiettivo: > 70%.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-red-700 bg-red-100 px-3 py-1 rounded-full text-sm font-medium">🔴 Critico</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>% Riciclo</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">35</span>
+                                    </div>
+                                    <input type="range" min="0" max="100" value="35" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Certificazioni Ambientali -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Certificazioni (ISO 14001)</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Stato di ottenimento della certificazione ISO 14001 per il Sistema di Gestione Ambientale.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Ottenuta</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <!-- Pannello Sociale (S) -->
+                    <div id="tab-sociale" class="tab-pane hidden" role="tabpanel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                            <!-- Indicatore: ParitÃ  di Genere -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">ParitÃ  di Genere</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Divario salariale (Gender Pay Gap) tra uomini e donne a parità di ruolo. Obiettivo: < 5%.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full text-sm font-medium">🟡 Da Migliorare</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>Pay Gap (%)</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">12</span>
+                                    </div>
+                                    <input type="range" min="0" max="50" value="12" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Formazione -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Ore di Formazione</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Numero medio di ore di formazione erogate per dipendente all'anno. Obiettivo: > 16 ore.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Buono</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>Ore medie / dipendente</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">20</span>
+                                    </div>
+                                    <input type="range" min="0" max="40" value="20" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Welfare Aziendale -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Welfare Aziendale</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Presenza di un piano di welfare strutturato (es. sanitÃ  integrativa, buoni pasto, flessibilitÃ  oraria).</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Attivo</span>
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Sicurezza sul Lavoro -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center mb-4">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Sicurezza sul Lavoro</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Indice di frequenza degli infortuni (numero infortuni > 3gg / ore lavorate * 1.000.000). Obiettivo: < 10.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-red-700 bg-red-100 px-3 py-1 rounded-full text-sm font-medium">🔴 Critico</span>
+                                </div>
+                                <div class="space-y-2">
+                                    <div class="flex justify-between items-center text-sm font-medium text-gray-600">
+                                        <span>Indice Frequenza</span>
+                                        <span class="slider-value font-bold text-lg text-gray-900">18.5</span>
+                                    </div>
+                                    <input type="range" min="0" max="50" value="18.5" step="0.1" class="w-full h-2 bg-gray-200 rounded-lg appearance-none cursor-pointer range-lg">
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+
+                    <!-- Pannello Governance (G) -->
+                    <div id="tab-governance" class="tab-pane hidden" role="tabpanel">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                            <!-- Indicatore: Codice Etico -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Codice Etico</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Adozione formale e diffusione di un codice etico e di condotta aziendale.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Adottato</span>
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Trasparenza -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Trasparenza</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Pubblicazione di un report di sostenibilitÃ  o di una Dichiarazione Non Finanziaria (DNF).</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full text-sm font-medium">🟡 Parziale</span>
+                                </div>
+                            </div>
+                            
+                            <!-- Indicatore: Organigramma -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Organigramma</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Definizione chiara e trasparente di ruoli e responsabilitÃ  nell'organigramma aziendale.</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-green-700 bg-green-100 px-3 py-1 rounded-full text-sm font-medium">🟢 Definito</span>
+                                </div>
+                            </div>
+
+                            <!-- Indicatore: Procedure di Controllo -->
+                            <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-200 indicator-card">
+                                <div class="flex justify-between items-center">
+                                    <div class="flex items-center space-x-2">
+                                        <h4 class="text-lg font-semibold text-gray-800">Procedure di Controllo</h4>
+                                        <span class="tooltip-trigger text-gray-400 hover:text-gray-600">
+                                            <svg class="h-5 w-5" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor"><path fill-rule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zM8.94 6.94a.75.75 0 11-1.06-1.061l2.5-2.5a.75.75 0 011.06 0l2.5 2.5a.75.75 0 11-1.06 1.061L11 5.689V9.25a.75.75 0 01-1.5 0V5.689L8.94 6.94zM8 10a.75.75 0 01.75.75v3.5a.75.75 0 01-1.5 0v-3.5A.75.75 0 018 10z" clip-rule="evenodd" /></svg>
+                                            <div class="tooltip-content">Esistenza di procedure di audit interno e di controllo dei rischi (es. Modello 231).</div>
+                                        </span>
+                                    </div>
+                                    <span class="status-badge text-yellow-700 bg-yellow-100 px-3 py-1 rounded-full text-sm font-medium">🟡 Da Implementare</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <script>
+document.addEventListener('DOMContentLoaded', function () {
+    const tabButtons = document.querySelectorAll('.tab-button');
+    const tabPanes = document.querySelectorAll('.tab-pane');
+    const activeTabClasses = ['border-blue-600','text-blue-600','font-semibold'];
+    const inactiveTabClasses = ['border-transparent','text-gray-500','hover:text-gray-700','hover:border-gray-400'];
+
+    function setActiveTab(tabName) {
+        tabButtons.forEach(button => {
+            if (button.dataset.tab === tabName) {
+                button.classList.remove(...inactiveTabClasses);
+                button.classList.add(...activeTabClasses);
+            } else {
+                button.classList.remove(...activeTabClasses);
+                button.classList.add(...inactiveTabClasses);
+            }
+        });
+        tabPanes.forEach(pane => {
+            pane.classList.toggle('hidden', pane.id !== `tab-${tabName}`);
+        });
+    }
+
+    tabButtons.forEach(button => {
+        button.classList.add('py-4','px-1','border-b-2','text-sm','font-medium','whitespace-nowrap');
+        button.addEventListener('click', () => setActiveTab(button.dataset.tab));
+    });
+
+    setActiveTab('ambiente');
+
+    document.querySelectorAll('.indicator-card input[type="range"]').forEach(slider => {
+        const card = slider.closest('.indicator-card');
+        const display = card.querySelector('.slider-value');
+        if (display) slider.addEventListener('input', () => display.textContent = slider.value);
+    });
+});
+</script>
+
+</body>
+</html>
